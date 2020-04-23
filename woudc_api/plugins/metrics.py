@@ -313,11 +313,12 @@ class MetricsProcessor(BaseProcessor):
 
         BaseProcessor.__init__(self, provider_def, PROCESS_SETTINGS)
 
-        url_tokens = os.environ.get('WDR_ELASTICSEARCH_URL').split('/')
-
         LOGGER.debug('Setting Elasticsearch properties')
-        self.index = url_tokens[-1]
+        url_tokens = os.environ.get('WDR_ELASTICSEARCH_URL').split('/')
         host = url_tokens[2]
+
+        self.index = os.environ.get('WDR_RECORDS_INDEX')
+        print(url_tokens, host, self.index)
 
         LOGGER.debug('Host: {}'.format(host))
         LOGGER.debug('Index name: {}'.format(self.index))

@@ -140,7 +140,7 @@ datasets:
                 end: null # or empty
         provider:
             name: Elasticsearch
-            data: ${WDR_ELASTICSEARH_URL}/woudc_data_registry.station
+            data: ${WDR_ELASTICSEARCH_URL}/woudc_data_registry.station
             id_field: woudc_id
     instruments:
         title: WOUDC Data Registry Instruments
